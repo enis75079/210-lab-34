@@ -110,16 +110,17 @@ public:
             for (int i = 0; i < numNodes; i++) {
                 int warehouse = next[front++];
                 cout << "  - Warehouse " << warehouse << endl;
-            }
-            // adds all unvisited neighboring ndoes to the queue
-            for (auto &adj : adjList[warehouse]) {
-                if (!visitedNodes[adj.first]) {
-                    visitedNodes[adj.first] = true;
-                    next[back++] = adj.first;
+            
+                // adds all unvisited neighboring ndoes to the queue
+                for (auto &adj : adjList[warehouse]) {
+                    if (!visitedNodes[adj.first]) {
+                        visitedNodes[adj.first] = true;
+                        next[back++] = adj.first;
+                    }
                 }
             }
+            cout << endl;
         }
-        cout << endl;
     }
 };
 
