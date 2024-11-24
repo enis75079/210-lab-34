@@ -41,17 +41,6 @@ public:
             // for an undirected graph, add an edge from dest to src also
             adjList[dest].push_back(make_pair(src, weight));
         }
-
-        // sorts the ajd list for consistent DFS
-        for (auto &adj : adjList) {
-            for (int i = 0; i < adj.size(); i++) {
-                for (size_t j = i + 1; j < adj.size(); j++) {
-                    if (adj[j].first < adj[i].first) {
-                        swap(adj[i], adj[j]);
-                    }
-                }    
-            }
-        }
     }
 
     // Print the graph's adjacency list
@@ -167,8 +156,6 @@ public:
 
     void MST() {
         int largeVal = 9999;
-        int u = 0;
-        int v = 0;
         vector<int> key(SIZE, largeVal);
         vector<int> inMST(SIZE, false);
         vector<bool> parent(SIZE, -1);
@@ -199,7 +186,8 @@ public:
         cout << "Minimum Spanning Tree edges:" << endl;
         for (int i = 1; i < SIZE; i++) {
             if (parent[i] != -1) {
-                cout << "Edge from " << parent[i] << " to " << i << " with capacity: " << key[i] << " units" << endl;
+                cout << "Edge from " << parent[i] << " to " << i
+                 << " with capacity: " << key[i] << " units" << endl;
             }
         }
     }
