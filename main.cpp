@@ -56,12 +56,14 @@ public:
 
     }
 
-    void BFS() {
+    void BFS(int startingInt) {
         vector<bool> visitedNodes(SIZE, false);
         int next[SIZE];
         int front = 0;
         int back = 0;
-        
+
+        cout << "BFS starting from vertex \n" << startingInt << ": ";
+        visitedNodes[start] = true;
     }
 };
 
