@@ -204,7 +204,7 @@ int main() {
     // Creates graph
     Graph graph(edges);
 
-    int userChoice = 0;
+    int userChoice = 1;
     while (userChoice != 0) {
         cout << "\nWater Distribution Network Menu:" << endl;
         cout << "[1] Display water distribution network" << endl;
@@ -230,6 +230,6 @@ int main() {
             cout << "Invalid input." << endl;
         }
     }
-    // Step 5 complete.
+    // Step 6 complete.
     return 0;
 }
