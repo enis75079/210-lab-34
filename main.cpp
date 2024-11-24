@@ -57,9 +57,9 @@ public:
     void printGraph() {
         cout << "Freight Delivery Network Topology:" << endl;
         for (int i = 0; i < adjList.size(); i++) {
-            cout << i << " --> ";
+            cout << "Warehouse " << i << " connects to:" << endl;
             for (Pair v : adjList[i])
-                cout << "(" << v.first << ", " << v.second << ") ";
+                cout << "  - Warehouse " << v.first << " (Distance: " << v.second << " miles)" << endl;
             cout << endl;
         }
     }
