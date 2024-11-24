@@ -127,8 +127,13 @@ public:
     }
 
     void shortestPath(int startingInt) {
-        vector<int> distance(SIZE);
-        distance[startingInt] = 0;
+        int largeVal = 9999;
+        int distance[SIZE];
+        bool visitedNodes[SIZE];
+
+        for (int i = 0; i <SIZE; i++) {
+            distance[i]
+        }
     }
 };
 
