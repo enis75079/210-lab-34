@@ -132,7 +132,36 @@ public:
         bool visitedNodes[SIZE];
 
         for (int i = 0; i <SIZE; i++) {
-            distance[i]
+            distance[i] = largeVal;
+            visitedNodes[i] = false;
+        }
+        distance[startingInt] = 0;
+
+        for (int count = 0; count < SIZE - 1; count++) {
+            int minDistance = largeVal;
+            int u = -1;
+
+            for (int i = 0; i < SIZE; i++) {
+                if (!visitedNodes[i] && distance[i] < minDistance) {
+                    minDistance = distance[i];
+                    u = i;
+                }
+            }
+
+            visitedNodes[u] = true;
+
+            for (auto &adj : adjList[u]) {
+                int v = adj.first;
+                int weight = adj.second;
+
+                if (!visitedNodes[v] && distance[u] + weight < distance[v]) {
+                    distance[v] = distance[u] + weight;
+                }    
+            }
+        }
+        cout << "Shortest path from node " << startingInt << ":\n";
+        for (int i = 0; i <SIZE; i++) {
+            cout << startingInt << " -> " << i << " : " << distance[i] << endl;
         }
     }
 };
