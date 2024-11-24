@@ -52,8 +52,13 @@ public:
         }
     }
 
-    void DFSRecursive(int, vector<bool>) {
+    void DFSRecursive(int currentIndex, vector<bool>& passedNodes) {
+        passedNodes[currentIndex] = true;
+        cout << currentIndex << " ";
 
+        for (auto &adj : adjList[currentIndex]) {
+            
+        }
     }
 
     void BFS(int startingInt) {
