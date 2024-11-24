@@ -136,6 +136,6 @@ int main() {
     // calls DFS and BFS
     graph.DFS(0);
     graph.BFS(0);
-    // Step 1 complete.
+    // Step 2 complete.
     return 0;
 }
