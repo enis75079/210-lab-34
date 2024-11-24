@@ -182,6 +182,6 @@ int main() {
 
     // call shortestPath function
     graph.shortestPath(0);
-    // Step 3 complete.
+    // Step 4 complete.
     return 0;
 }
