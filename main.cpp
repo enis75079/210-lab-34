@@ -57,7 +57,11 @@ public:
     }
 
     void BFS() {
-
+        vector<bool> visitedNodes(SIZE, false);
+        int next[SIZE];
+        int front = 0;
+        int back = 0;
+        
     }
 };
 
