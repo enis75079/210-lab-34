@@ -13,6 +13,7 @@ using namespace std;
 // changed SIZE to include the new nodes
 const int SIZE = 9;
 
+
 struct Edge {
     int src, dest, weight;
 };
@@ -123,6 +124,11 @@ public:
             }
             cout << endl;
         }
+    }
+
+    void shortestPath(int startingInt) {
+        vector<int> distance(SIZE);
+        distance[startingInt] = 0;
     }
 };
 
