@@ -41,7 +41,7 @@ public:
             adjList[dest].push_back(make_pair(src, weight));
         }
 
-        // sorts the ajd list for consistent DFS order
+        // sorts the ajd list for consistent DFS
         for (auto &adj : adjList) {
             for (int i = 0; i < adj.size(); i++) {
                 for (size_t j = i + 1; j < adj.size(); j++) {
@@ -55,7 +55,7 @@ public:
 
     // Print the graph's adjacency list
     void printGraph() {
-        cout << "Graph's adjacency list:" << endl;
+        cout << "Freight Delivery Network Topology:" << endl;
         for (int i = 0; i < adjList.size(); i++) {
             cout << i << " --> ";
             for (Pair v : adjList[i])
