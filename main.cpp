@@ -54,7 +54,7 @@ public:
 
     void DFS(int startingInt) {
         vector<bool> visitedNodes(SIZE, false);
-        cout << "DFS starting from vertex " << startingInt << ": ";
+        cout << "DFS starting from vertex " << startingInt << ": \n";
         DFSRecursive(startingInt, visitedNodes);
         cout << endl;
     }
@@ -76,7 +76,7 @@ public:
         int front = 0;
         int back = 0;
 
-        cout << "BFS starting from vertex \n" << startingInt << ": ";
+        cout << "BFS starting from vertex " << startingInt << ": \n";
         visitedNodes[startingInt] = true;
         next[back += 1] = startingInt;
 
@@ -87,7 +87,8 @@ public:
             for (auto &adj : adjList[currentIndex]) {
                 if (!visitedNodes[adj.first]) {
                     visitedNodes[adj.first] = true;
-                    next[back += 1] = adj.first;
+                    next[back] = adj.first;
+                    back++;
                 }
             }
         }
@@ -108,6 +109,7 @@ int main() {
     // Prints adjacency list representation of graph
     graph.printGraph();
 
+    graph.DFS(0);
     graph.BFS(0);
     return 0;
 }
