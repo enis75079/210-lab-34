@@ -204,11 +204,27 @@ int main() {
     // Creates graph
     Graph graph(edges);
 
-    // Prints adjacency list representation of graph
-    graph.printGraph();
+    int userChoice = 0;
+    while (userChoice != 0) {
+        cout << "\nWater Distribution Network Menu:" << endl;
+        cout << "[1] Display water distribution network" << endl;
+        cout << "[2] Check contaminant spread (BFS)" << endl;
+        cout << "[3] Plan inspection route (DFS)" << endl;
+        cout << "[4] Calculate shortest paths" << endl;
+        cout << "[5] Find Minimum Spanning Tree" << endl;
+        cout << "[0] Exit" << endl;
+        cout << "Enter your choice: ";
+        cin >> userChoice;
 
-    // call shortestPath function
-    graph.MST();
+        if (userChoice == 1) {
+            graph.printGraph();
+        } else if (userChoice == 2) {
+            graph.BFS(0);
+        } else if (userChoice == 3) {
+            graph.DFS(0);
+        }
+    }
+
     // Step 5 complete.
     return 0;
 }
