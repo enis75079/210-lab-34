@@ -43,7 +43,11 @@ public:
 
         for (auto &adj : adjList) {
             for (int i = 0; i < adj.size(); i++) {
-                for 9size
+                for (size_t j = i + 1; j < adj.size(); j++) {
+                    if (adj[j].first < adj[i].first) {
+                        swap(adj[i], adj[j]);
+                    }
+                }    
             }
         }
     }
