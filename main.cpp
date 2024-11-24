@@ -168,6 +168,7 @@ public:
     void MST() {
         int largeVal = 9999;
         int u = 0;
+        int v = 0;
         vector<int> key(SIZE, largeVal);
         vector<int> inMST(SIZE, false);
         vector<bool> parent(SIZE, -1);
@@ -188,9 +189,17 @@ public:
                 int v = adj.first;
                 int weight = adj.second;
 
-                if (!visitedNodes[v] && distance[u] + weight < distance[v]) {
-                    distance[v] = distance[u] + weight;
+                if (!inMST[v] && weight < key[v]) {
+                    key[v] = weight;
+                    parent[v] = u;
                 }    
+            }
+        }
+
+        cout << "Minimum Spanning Tree edges:" << endl;
+        for (int i = 1; i < SIZE; i++) {
+            if (parent[i] != -1) {
+                cout << "Edge from " << parent[i] << " to " << i << " with capacity: " << key[i] << " units" << endl;
             }
         }
     }
@@ -211,7 +220,7 @@ int main() {
     graph.printGraph();
 
     // call shortestPath function
-    graph.shortestPath(0);
+    graph.MST();
     // Step 4 complete.
     return 0;
 }
