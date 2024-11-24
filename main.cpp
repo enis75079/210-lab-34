@@ -56,6 +56,8 @@ public:
     // Print the graph's adjacency list
     void printGraph() {
         cout << "Freight Delivery Network Topology:" << endl;
+        cout << "++++++++++++++++++++++++++++++++++" << endl;
+        cout << endl;
         for (int i = 0; i < adjList.size(); i++) {
             cout << "Warehouse " << i << " connects to:" << endl;
             for (Pair v : adjList[i])
@@ -141,6 +143,6 @@ int main() {
     // calls DFS and BFS
     graph.DFS(0);
     graph.BFS(0);
-    // Step 2 complete.
+    // Step 3 complete.
     return 0;
 }
