@@ -52,12 +52,21 @@ public:
         }
     }
 
+    void DFS(int startingInt) {
+        vector<bool> visitedNodes(SIZE, false);
+        cout << "DFS starting from vertex " << startingInt << ": ";
+        DFSRecursive(startingInt, visitedNodes);
+        cout << endl;
+    }
+
     void DFSRecursive(int currentIndex, vector<bool>& passedNodes) {
         passedNodes[currentIndex] = true;
         cout << currentIndex << " ";
 
         for (auto &adj : adjList[currentIndex]) {
-            
+            if (!passedNodes[adj.first]) {
+                DFSRecursive(adj.first, passedNodes);
+            }
         }
     }
 
