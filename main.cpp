@@ -52,7 +52,7 @@ public:
         }
     }
 
-    void DFS() {
+    void DFSRecursive(int, vector<bool>) {
 
     }
 
@@ -71,12 +71,13 @@ public:
             cout << currentIndex << " ";
 
             for (auto &adj : adjList[currentIndex]) {
-                if (visitedNodes[adj.first]) {
-                    visitedNodes[adj.first]
+                if (!visitedNodes[adj.first]) {
+                    visitedNodes[adj.first] = true;
+                    next[back += 1] = adj.first;
                 }
             }
         }
-
+        cout << endl;
     }
 };
 
