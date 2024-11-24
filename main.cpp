@@ -63,7 +63,12 @@ public:
         int back = 0;
 
         cout << "BFS starting from vertex \n" << startingInt << ": ";
-        visitedNodes[start] = true;
+        visitedNodes[startingInt] = true;
+        next[back += 1] = startingInt;
+
+        for (auto &nodes : list[index]) {
+            
+        }
     }
 };
 
