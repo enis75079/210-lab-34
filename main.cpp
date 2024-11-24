@@ -164,6 +164,36 @@ public:
             cout << startingInt << " -> " << i << " : " << distance[i] << endl;
         }
     }
+
+    void MST() {
+        int largeVal = 9999;
+        int u = 0;
+        vector<int> key(SIZE, largeVal);
+        vector<int> inMST(SIZE, false);
+        vector<bool> parent(SIZE, -1);
+
+        key[0] = 0;
+
+        for (int count = 0; count < SIZE - 1; count++) {
+            int u = -1;
+        
+            for (int i = 0; i < SIZE; i++) {
+                if (!inMST[i] && (u == -1 || key[i] < key[u])) {
+                    u = i;
+                }
+            }
+            inMST[u] = true;
+
+            for (auto &adj : adjList[u]) {
+                int v = adj.first;
+                int weight = adj.second;
+
+                if (!visitedNodes[v] && distance[u] + weight < distance[v]) {
+                    distance[v] = distance[u] + weight;
+                }    
+            }
+        }
+    }
 };
 
 int main() {
