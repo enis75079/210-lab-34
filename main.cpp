@@ -66,9 +66,17 @@ public:
         visitedNodes[startingInt] = true;
         next[back += 1] = startingInt;
 
-        for (auto &nodes : list[index]) {
-            
+        while (front < back) {
+            int currentIndex = next[front += 1];
+            cout << currentIndex << " ";
+
+            for (auto &adj : adjList[currentIndex]) {
+                if (visitedNodes[adj.first]) {
+                    visitedNodes[adj.first]
+                }
+            }
         }
+
     }
 };
 
@@ -85,5 +93,6 @@ int main() {
     // Prints adjacency list representation of graph
     graph.printGraph();
 
+    graph.BFS(0);
     return 0;
 }
