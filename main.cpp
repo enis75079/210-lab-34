@@ -40,6 +40,12 @@ public:
             // for an undirected graph, add an edge from dest to src also
             adjList[dest].push_back(make_pair(src, weight));
         }
+
+        for (auto &adj : adjList) {
+            for (int i = 0; i < adj.size(); i++) {
+                for 9size
+            }
+        }
     }
 
     // Print the graph's adjacency list
