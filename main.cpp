@@ -52,17 +52,22 @@ public:
         }
     }
 
+    // DFS function. (recursive)
     void DFS(int startingInt) {
+        // tracks the nodes that have been visited
         vector<bool> visitedNodes(SIZE, false);
         cout << "DFS starting from vertex " << startingInt << ": \n";
+        // calls the recursion
         DFSRecursive(startingInt, visitedNodes);
         cout << endl;
     }
 
     void DFSRecursive(int currentIndex, vector<bool>& passedNodes) {
+        // sets the current index as visited (true) and prints the node
         passedNodes[currentIndex] = true;
         cout << currentIndex << " ";
 
+        // recursion for the adjacent nodes that havent been visited yet
         for (auto &adj : adjList[currentIndex]) {
             if (!passedNodes[adj.first]) {
                 DFSRecursive(adj.first, passedNodes);
@@ -70,8 +75,12 @@ public:
         }
     }
 
+    // BFS function
     void BFS(int startingInt) {
+        // tracks the nodes that have been visited
         vector<bool> visitedNodes(SIZE, false);
+
+        // array for what is next during current node
         int next[SIZE];
         int front = 0;
         int back = 0;
@@ -86,6 +95,7 @@ public:
             front++;
             cout << currentIndex << " ";
 
+            // adds all unvisited neighboring ndoes to the queue
             for (auto &adj : adjList[currentIndex]) {
                 if (!visitedNodes[adj.first]) {
                     visitedNodes[adj.first] = true;
@@ -111,6 +121,7 @@ int main() {
     // Prints adjacency list representation of graph
     graph.printGraph();
 
+    // calls DFS and BFS
     graph.DFS(0);
     graph.BFS(0);
     return 0;
