@@ -68,16 +68,16 @@ public:
     void DFS(int startingInt) {
         // tracks the nodes that have been visited
         vector<bool> visitedNodes(SIZE, false);
-        cout << "DFS starting from vertex " << startingInt << ": \n";
+        cout << "Tracing Freight Delivery Routes (DFS) rfom Warehouse " << startingInt << ": \n";
         // calls the recursion
         DFSRecursive(startingInt, visitedNodes);
         cout << endl;
     }
 
-    void DFSRecursive(int currentIndex, vector<bool>& passedNodes) {
+    void DFSRecursive(int currentIndex, vector<bool>& passedNodes, int totalDistance) {
         // sets the current index as visited (true) and prints the node
         passedNodes[currentIndex] = true;
-        cout << currentIndex << " ";
+        cout << "Visitng Warehouse " << currentIndex << " (Total Distance Traveled: " << totalDistance << " miles)" << endl;
 
         // recursion for the adjacent nodes that havent been visited yet
         for (auto &adj : adjList[currentIndex]) {
