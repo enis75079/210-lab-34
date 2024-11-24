@@ -78,10 +78,12 @@ public:
 
         cout << "BFS starting from vertex " << startingInt << ": \n";
         visitedNodes[startingInt] = true;
-        next[back += 1] = startingInt;
+        next[back] = startingInt;
+        back++;
 
         while (front < back) {
-            int currentIndex = next[front += 1];
+            int currentIndex = next[front];
+            front++;
             cout << currentIndex << " ";
 
             for (auto &adj : adjList[currentIndex]) {
