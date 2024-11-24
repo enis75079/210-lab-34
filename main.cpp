@@ -41,6 +41,7 @@ public:
             adjList[dest].push_back(make_pair(src, weight));
         }
 
+        // sorts the ajd list for consistent DFS order
         for (auto &adj : adjList) {
             for (int i = 0; i < adj.size(); i++) {
                 for (size_t j = i + 1; j < adj.size(); j++) {
