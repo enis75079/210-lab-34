@@ -96,19 +96,22 @@ public:
         int next[SIZE];
         int front = 0;
         int back = 0;
+        int currentLayer = 0;
 
-        cout << "BFS starting from vertex " << startingInt << ": \n";
+        cout << "\nInspecting Freight Distrubution Layers (BFS) from Warehouse " << startingInt << ":\n";
         visitedNodes[startingInt] = true;
         next[back] = startingInt;
         back++;
 
         while (front < back) {
-            int currentIndex = next[front];
-            front++;
-            cout << currentIndex << " ";
-
+            int numNodes = back - front;
+            cout << "Layer " << currentLayer++ << endl;
+            
+            for (int i = 0; i < numNodes; i++) {
+                int warehouse = next[front++];
+            }
             // adds all unvisited neighboring ndoes to the queue
-            for (auto &adj : adjList[currentIndex]) {
+            for (auto &adj : adjList[warehouse]) {
                 if (!visitedNodes[adj.first]) {
                     visitedNodes[adj.first] = true;
                     next[back] = adj.first;
