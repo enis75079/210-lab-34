@@ -180,9 +180,8 @@ int main() {
     // Prints adjacency list representation of graph
     graph.printGraph();
 
-    // calls DFS and BFS
-    graph.DFS(0);
-    graph.BFS(0);
+    // call shortestPath function
+    graph.shortestPath(0);
     // Step 3 complete.
     return 0;
 }
