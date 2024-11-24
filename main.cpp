@@ -68,9 +68,9 @@ public:
     void DFS(int startingInt) {
         // tracks the nodes that have been visited
         vector<bool> visitedNodes(SIZE, false);
-        cout << "Tracing Freight Delivery Routes (DFS) rfom Warehouse " << startingInt << ": \n";
+        cout << "Tracing Freight Delivery Routes (DFS) from Warehouse " << startingInt << ": \n";
         // calls the recursion
-        DFSRecursive(startingInt, visitedNodes);
+        DFSRecursive(startingInt, visitedNodes, 0);
         cout << endl;
     }
 
@@ -82,7 +82,7 @@ public:
         // recursion for the adjacent nodes that havent been visited yet
         for (auto &adj : adjList[currentIndex]) {
             if (!passedNodes[adj.first]) {
-                DFSRecursive(adj.first, passedNodes);
+                DFSRecursive(adj.first, passedNodes, totalDistance + adj.second);
             }
         }
     }
