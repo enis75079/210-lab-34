@@ -222,9 +222,14 @@ int main() {
             graph.BFS(0);
         } else if (userChoice == 3) {
             graph.DFS(0);
+        } else if (userChoice == 4) {
+            graph.shortestPath(0);
+        } else if (userChoice == 5) {
+            graph.MST();
+        } else if (userChoice != 0) {
+            cout << "Invalid input." << endl;
         }
     }
-
     // Step 5 complete.
     return 0;
 }
