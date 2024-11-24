@@ -209,6 +209,6 @@ int main() {
 
     // call shortestPath function
     graph.MST();
-    // Step 4 complete.
+    // Step 5 complete.
     return 0;
 }
